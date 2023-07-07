@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spring Boot Project Demo 2 - Variables de Sesión</title>
+<link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+    <div class="cabecera">
+        <div class="cab1"></div>
+        <div class="cap2"></div>
+    </div>
+    <div class="cuerpo">
+        <div class="panel1">
+            <div class="nota"><div class="notacab1"><p>Proyecto</p></div>
+                              <div class="notabody"><p style="text-align: center;"><span>#Spring Boot Project Demo 2</span></p>
+                            </div>
+            </div>
+            <div class="nota"><div class="notacab1"><p>Objetivos</p></div>
+                              <div class="notabody"><p class="objetivos">- <b>F</b>amiliarizarse con el uso y gestión de las variables de sesión (memoria de usuario).</p>
+                              						<p class="objetivos">- <b>R</b>ecordar como se puede recorrer colecciones de objetos en las vistas (Thymeleafe).</p>
+                              </div>        
+                            
+            </div>
+            <div class="nota"><div class="notacab2"><p>Entorno de Desarrollo</p></div>
+                              <div class="notabody"><p><span>Ide:</span> Sprint Tool Suite, versión: 4</p>
+                                                    <p><span>Servidor de referencia:</span> Apache Tomcat, versión: 10</p>
+                                                    <p><span>Jdk:</span> OpenJdk, versión: 17.1</p>
+                            </div>
+            </div>
+            <div class="nota"><div class="notacab2"><p>Estandar de Desarrollo</p></div>
+                              <div class="notabody"><p><span>Gestor de proyecto:</span> Maven, versión: 4</p>
+                            </div>
+            </div> 
+            <div class="nota"><div class="notacab2"><p>Dependencias</p></div>
+                              <div class="notabody"><p><span>Spring Boot Framework:</span> Spring, versión 3.1.*. Módulos: spring-boot-starter-web, spring-boot-starter-tomcat, tomcat-embed-jasper, tomcat-embed-jasper</p>
+                            </div>
+            </div>    
+            <div class="nota"><div class="notacab2"><p>Documentación y Sitios de Interés</p></div>
+                              <div class="notabody"><p><a href="https://mvnrepository.com/" target="_blank"><b>Ir a</b></a> Maven Repository (para localizar dependencias)</p>
+                                                    <p><a href="https://docs.spring.io/spring-framework/docs/current/reference/html/" target="_blank"><b>Leer</b></a> Documentación de Spring Framework</p>
+                                                    <p><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/"target="_blank"><b>Leer</b></a> Documentación de Spring Boot</p>
+                                                    <p><a href="https://www.thymeleaf.org/documentation.html" target="_blank"><b>Leer</b></a> Documentación de Thymeleaf (vistas)</p>
+                            </div>
+            </div>         
+        </div>
+        <div class="panel2">
+            <div class="item"><p><span>Ejemplo 1 - Variables de sesión:</span> Formulario que envía los datos de un alumno por método POST a <b>ejemplo1</b> (controladora MainController) y lo añade a una lista implementada con un ArrayList en un objeto de la clase Grupo. Si es el primer alumno que se añade durante la sesión del usuario, se crea e inicializa una variable de sesión denominada DataAlumno. Si al añadir un nuevo alumno, ya existe la variable de sesión, lo añade a la lista. Pruebe a introducir varios alumos. Para examinar la lista de alumnos, pruebe a ejecutar el Ejemplo 2.</p>
+            				 <div><form name="ejemplo1" method="POST" action="./ejemplo1">
+            						  <div><label>Nombre: </label><input type="text" name="Nombre" required/></div><!--
+            					   --><div><label>Apellidos: </label><input type="text" name="Apellidos" required/></div><!--
+            					   --><div><label>Edad: </label><input type="number" name="Edad" min="1" max="100" step="1" required/></div><!--
+            					   --><div><input type="submit" value="Añadir" /></div>
+            					  </form>
+                            </div>
+            </div>
+            <div class="item"><p><span>Ejemplo 2 - Iteración en Thymeleafe:</span> Este ejemplo invoca a <b>./alumnos/ejemplo2</b> (controladora AlumnosController) por método GET y muestra los alumnos almacenados en la variable de sesión DataAlumno por el Ejemplo 1. Se hace uso del atributo th:each de Thymeleafe para iterar los objetos de tipo Alumno. <a href="./alumnos/ejemplo2">Ver Ejemplo</a></p></div>
+        </div>
+    </div>
+    <div class="pie"><p><span>©</span> 2023 - Daniel Pérez Pérez</p></div>
+
+</body>
+</html>

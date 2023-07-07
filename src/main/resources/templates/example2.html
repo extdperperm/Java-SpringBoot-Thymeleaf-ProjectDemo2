@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+<meta charset="UTF-8">
+<title>Spring Project Demo 2 - Ejemplo 2</title>
+<link rel="stylesheet" href="../styles/index.css">
+</head> 
+<body>
+    <div class="cabecera">
+        <div class="cab1"></div>
+        <div class="cap2"></div>
+    </div>
+    <div class="cuerpo">
+        <div class="panel2"> 
+            <!-- Si el modelo DataGrupo está vacío, no se intenta mostrar información, de lo contrario, se recorre con
+                 Thymeleaf la lista de alumnos.
+            --> 
+            <div class="item"><p><span>Resultado Ejemplo 2:</span> Número total de alumnos: <em th:text="${DataGrupo.numAlumnos}"/> alumno/s:</p></div>
+	           	 <div th:if="${DataGrupo != null}">
+	    			<div class="Fila" th:each="item : ${DataGrupo.lista}">
+									  <b>Nombre:</b>&nbsp;<em th:text="${item.nom}"/><br>
+	    				 			  <b>Apellidos:</b>&nbsp;<em th:text="${item.apell}"/><br>
+	    				 			  <b>Edad:</b>&nbsp;<em th:text="${item.edad}"/><br>
+	    			</div>
+				 </div>
+            <div class="item"><p style="text-align:center;"><a href="../">Volver</a></p></div>
+        </div>
+    </div> 
+    <div class="pie"><p><span>©</span> 2023 - Daniel Pérez Pérez</p></div>
+
+</body>
+</html>
